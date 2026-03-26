@@ -1,4 +1,3 @@
-# Этап 1: Сборка
 FROM maven:3.9-amazoncorretto-21 AS builder
 
 WORKDIR /app
@@ -8,7 +7,6 @@ RUN mvn dependency:go-offline
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Этап 2: Запуск
 FROM amazoncorretto:21-alpine
 
 WORKDIR /app

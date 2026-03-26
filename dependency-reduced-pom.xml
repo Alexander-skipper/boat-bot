@@ -24,6 +24,7 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <shadedArtifactAttached>false</shadedArtifactAttached>
               <transformers>
                 <transformer>
                   <mainClass>com.boat.BotApplication</mainClass>
