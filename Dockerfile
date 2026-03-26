@@ -12,6 +12,6 @@ RUN mvn clean package -DskipTests
 FROM amazoncorretto:21-alpine
 
 WORKDIR /app
-COPY --from=builder /app/boat-bot-1.0-SNAPSHOT.jar app.jar
+COPY --from=builder /app/target/boat-bot-1.0-SNAPSHOT.jar app.jar
 
 CMD ["java", "-jar", "app.jar"]
