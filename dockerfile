@@ -1,5 +1,5 @@
 # Этап 1: Сборка проекта
-FROM maven:3.9-eclipse-temurin-21 AS builder
+FROM maven:3.9-amazoncorretto-21 AS builder
 
 WORKDIR /app
 COPY pom.xml .
