@@ -9,12 +9,14 @@ COPY src ./src
 RUN mvn -q clean package -DskipTests
 
 
-FROM amazoncorretto:21-alpine
+FROM amazoncorretto:21
 
 WORKDIR /app
 
 COPY --from=builder /app/target/app.jar app.jar
 
 RUN ls -la /app
+
+RUN java -version
 
 CMD ["java", "-jar", "app.jar"]
