@@ -8,11 +8,15 @@ RUN mvn -q dependency:go-offline
 COPY src ./src
 RUN mvn -q clean package -DskipTests
 
+RUN ls -la /app/target
+
 
 FROM amazoncorretto:21-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app/target/app.jar app.jar
+COPY --from=builder /app/target/*.jar app.jar
+
+RUN ls -la /app
 
 CMD ["java", "-jar", "app.jar"]

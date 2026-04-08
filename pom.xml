@@ -59,6 +59,7 @@
 
                         <configuration>
                             <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <finalName>app</finalName>
 
                             <!-- убираем мусор -->
                             <filters>
