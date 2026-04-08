@@ -55,10 +55,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <!-- Создаём отдельный файл с суффиксом, не трогаем оригинал -->
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
-                            <shadedClassifierName>shaded</shadedClassifierName>
-
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>com.boat.BotApplication</mainClass>
