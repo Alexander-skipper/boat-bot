@@ -59,9 +59,8 @@
 
                         <configuration>
                             <shadedArtifactAttached>false</shadedArtifactAttached>
-                            <finalName>app</finalName>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
 
-                            <!-- убираем мусор -->
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
@@ -85,4 +84,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
