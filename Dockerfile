@@ -7,4 +7,7 @@ RUN mvn dependency:go-offline
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-CMD ["java", "-jar", "target/boat-bot-1.0-SNAPSHOT.jar"]
+# Просто переименовываем shaded JAR
+RUN mv /app/target/boat-bot-1.0-SNAPSHOT-shaded.jar /app/target/boat-bot.jar
+
+CMD ["java", "-jar", "target/boat-bot.jar"]
